@@ -5,6 +5,8 @@
 
 A comprehensive reference guide for Suno AI music generation parameters, meta-tags, and best practices.
 
+**📑 [View Live Cheatsheet](https://a-gb.github.io/suno-cheatsheet/SUNO-CHEATSHEET.html)**
+
 ## Key Features
 
 - **Technical Parameters**: Complete reference for all technical parameters like `temp`, `cfg`, `key`, etc.

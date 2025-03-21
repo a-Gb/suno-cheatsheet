@@ -25,6 +25,9 @@ Thumbs.db
 # Node modules if any
 node_modules/
 
+# Placeholder files
+*.placeholder
+
 # Environment variables
 .env
 .env.local
