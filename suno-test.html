@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suno Cheatsheet Tester</title>
+  <style>
+    /* Import modern fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    
+    :root {
+      /* Modern color palette */
+      --primary: #7C3AED;         /* Vibrant purple */
+      --primary-light: #A78BFA;   /* Light purple */
+      --primary-dark: #5B21B6;    /* Dark purple */
+      --secondary: #2563EB;       /* Vibrant blue */
+      --secondary-light: #60A5FA; /* Light blue */
+      --accent: #F59E0B;          /* Amber accent */
+      --success: #10B981;         /* Emerald green */
+      --danger: #EF4444;          /* Red */
+      --warning: #FBBF24;         /* Yellow */
+      --dark: #1F2937;            /* Near black */
+      --text: #374151;            /* Dark gray text */
+      --text-light: #6B7280;      /* Medium gray text */
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      
+      /* Transitions */
+      --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      
+      /* Border radius */
+      --radius: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      font-size: 14px;
+      background-color: var(--gray-50);
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: 24px;
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    
+    .test-section {
+      margin-bottom: 30px;
+    }
+    
+    h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--secondary);
+    }
+    
+    .prompt-builder {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .tab-container {
+      display: flex;
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 16px;
+    }
+    
+    .tab {
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-bottom: 2px solid transparent;
+    }
+    
+    .tab.active {
+      border-bottom: 2px solid var(--primary);
+      font-weight: 500;
+      color: var(--primary);
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .tag-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    
+    .tag {
+      background-color: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      user-select: none;
+    }
+    
+    .tag:hover {
+      background-color: var(--gray-200);
+    }
+    
+    .tag.selected {
+      background-color: var(--primary-light);
+      color: white;
+    }
+    
+    .params-container {
+      margin-bottom: 16px;
+    }
+    
+    .param-group {
+      margin-bottom: 12px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius);
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    
+    .character-counter {
+      font-size: 12px;
+      color: var(--text-light);
+      text-align: right;
+      margin-top: 4px;
+    }
+    
+    .character-counter.warning {
+      color: var(--warning);
+    }
+    
+    .character-counter.danger {
+      color: var(--danger);
+    }
+    
+    .output-container {
+      background-color: var(--dark);
+      color: white;
+      padding: 16px;
+      border-radius: var(--radius);
+      font-family: 'JetBrains Mono', monospace;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+    
+    .button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      padding: 8px 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .button:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    .selected-items {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 12px;
+      margin-bottom: 16px;
+      min-height: 100px;
+    }
+    
+    .selected-item {
+      display: inline-block;
+      background-color: var(--primary-light);
+      color: white;
+      border-radius: var(--radius);
+      padding: 4px 8px;
+      margin: 2px;
+      font-size: 12px;
+    }
+    
+    .selected-item .remove {
+      cursor: pointer;
+      margin-left: 4px;
+      opacity: 0.7;
+    }
+    
+    .selected-item .remove:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Suno Cheatsheet Tester</h1>
+    
+    <div class="test-section">
+      <h2>Prompt Builder Test</h2>
+      
+      <div class="prompt-builder">
+        <div class="tab-container">
+          <div class="tab active" data-tab="parameters">Parameters</div>
+          <div class="tab" data-tab="structure">Structure</div>
+          <div class="tab" data-tab="style">Style & Exclude</div>
+          <div class="tab" data-tab="result">Full Prompt</div>
+        </div>
+        
+        <div class="tab-content active" data-tab="parameters">
+          <div class="params-container">
+            <div class="param-group">
+              <label for="temp">Temperature (0.0 - 1.0+)</label>
+              <input type="number" id="temp" value="0.8" min="0" max="2" step="0.05">
+            </div>
+            <div class="param-group">
+              <label for="cfg">CFG (1 - 20)</label>
+              <input type="number" id="cfg" value="7.0" min="1" max="20" step="0.5">
+            </div>
+            <div class="param-group">
+              <label for="key">Key</label>
+              <input type="text" id="key" value="C minor">
+            </div>
+            <div class="param-group">
+              <label for="bpm">BPM</label>
+              <input type="number" id="bpm" value="110" min="60" max="200">
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-content" data-tab="structure">
+          <h3>Song Structure Elements</h3>
+          <div class="tag-selector" id="structure-tags">
+            <div class="tag" data-tag="[Intro]">Intro</div>
+            <div class="tag" data-tag="[Verse]">Verse</div>
+            <div class="tag" data-tag="[Chorus]">Chorus</div>
+            <div class="tag" data-tag="[Bridge]">Bridge</div>
+            <div class="tag" data-tag="[Pre-Chorus]">Pre-Chorus</div>
+            <div class="tag" data-tag="[Outro]">Outro</div>
+            <div class="tag" data-tag="[Interlude]">Interlude</div>
+            <div class="tag" data-tag="[Solo]">Solo</div>
+            <div class="tag" data-tag="[Hook]">Hook</div>
+            <div class="tag" data-tag="[Break]">Break</div>
+          </div>
+          
+          <h3>Sound Effects & Vocals</h3>
+          <div class="tag-selector" id="sound-tags">
+            <div class="tag" data-tag="*rainfall*">Rainfall *</div>
+            <div class="tag" data-tag="*thunder*">Thunder *</div>
+            <div class="tag" data-tag="[applause]">Applause</div>
+            <div class="tag" data-tag="[cheering]">Cheering</div>
+            <div class="tag" data-tag="[laughter]">Laughter</div>
+            <div class="tag" data-tag="[sighs]">Sighs</div>
+            <div class="tag" data-tag="[Guitar Solo]">Guitar Solo</div>
+            <div class="tag" data-tag="[Piano Solo]">Piano Solo</div>
+            <div class="tag" data-tag="[Drum Solo]">Drum Solo</div>
+            <div class="tag" data-tag="[Drop]">Drop</div>
+          </div>
+          
+          <h3>Selected Elements</h3>
+          <div class="selected-items" id="selected-elements">
+            <!-- Selected items will be added here -->
+          </div>
+        </div>
+        
+        <div class="tab-content" data-tab="style">
+          <div class="param-group">
+            <label for="style">Style (max 200 chars)</label>
+            <textarea id="style" placeholder="Enter style description here...">Cinematic orchestral with ethereal female vocals</textarea>
+            <div class="character-counter" id="style-counter">46/200</div>
+          </div>
+          
+          <div class="param-group">
+            <label for="exclude">Exclude (max 200 chars)</label>
+            <textarea id="exclude" placeholder="Elements to exclude...">Male vocals, EDM drops, trap beats</textarea>
+            <div class="character-counter" id="exclude-counter">31/200</div>
+          </div>
+        </div>
+        
+        <div class="tab-content" data-tab="result">
+          <button class="button" id="generate-button">Generate Full Prompt</button>
+          <div class="output-container" id="prompt-output"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tab switching
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          const tabName = this.getAttribute('data-tab');
+          
+          // Update active tab
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Show corresponding content
+          document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+          });
+          document.querySelector(`.tab-content[data-tab="${tabName}"]`).classList.add('active');
+        });
+      });
+      
+      // Tag selection
+      const tags = document.querySelectorAll('.tag');
+      const selectedElements = [];
+      
+      tags.forEach(tag => {
+        tag.addEventListener('click', function() {
+          const tagText = this.getAttribute('data-tag');
+          
+          if (this.classList.contains('selected')) {
+            // Remove from selection
+            this.classList.remove('selected');
+            const index = selectedElements.indexOf(tagText);
+            if (index > -1) {
+              selectedElements.splice(index, 1);
+            }
+          } else {
+            // Add to selection
+            this.classList.add('selected');
+            selectedElements.push(tagText);
+          }
+          
+          updateSelectedElements();
+        });
+      });
+      
+      // Character counter for style and exclude
+      const styleTextarea = document.getElementById('style');
+      const excludeTextarea = document.getElementById('exclude');
+      const styleCounter = document.getElementById('style-counter');
+      const excludeCounter = document.getElementById('exclude-counter');
+      
+      function updateCharCounter(textarea, counter, maxChars = 200) {
+        const chars = textarea.value.length;
+        counter.textContent = `${chars}/${maxChars}`;
+        
+        if (chars > maxChars) {
+          counter.classList.add('danger');
+          counter.classList.remove('warning');
+        } else if (chars > maxChars * 0.8) {
+          counter.classList.add('warning');
+          counter.classList.remove('danger');
+        } else {
+          counter.classList.remove('warning', 'danger');
+        }
+      }
+      
+      styleTextarea.addEventListener('input', () => updateCharCounter(styleTextarea, styleCounter));
+      excludeTextarea.addEventListener('input', () => updateCharCounter(excludeTextarea, excludeCounter));
+      
+      // Initial counter update
+      updateCharCounter(styleTextarea, styleCounter);
+      updateCharCounter(excludeTextarea, excludeCounter);
+      
+      // Function to update selected elements display
+      function updateSelectedElements() {
+        const container = document.getElementById('selected-elements');
+        container.innerHTML = '';
+        
+        selectedElements.forEach((element, index) => {
+          const item = document.createElement('div');
+          item.className = 'selected-item';
+          item.innerHTML = `${element} <span class="remove" data-index="${index}">×</span>`;
+          container.appendChild(item);
+        });
+        
+        // Add event listeners to remove buttons
+        document.querySelectorAll('.remove').forEach(button => {
+          button.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            const removedTag = selectedElements.splice(index, 1)[0];
+            
+            // Deselect corresponding tag
+            document.querySelectorAll('.tag').forEach(tag => {
+              if (tag.getAttribute('data-tag') === removedTag) {
+                tag.classList.remove('selected');
+              }
+            });
+            
+            updateSelectedElements();
+          });
+        });
+      }
+      
+      // Generate full prompt
+      document.getElementById('generate-button').addEventListener('click', function() {
+        const temp = document.getElementById('temp').value;
+        const cfg = document.getElementById('cfg').value;
+        const key = document.getElementById('key').value;
+        const bpm = document.getElementById('bpm').value;
+        const style = document.getElementById('style').value;
+        const exclude = document.getElementById('exclude').value;
+        
+        let prompt = `<details>
+temp=${temp}
+cfg=${cfg}
+key=${key.replace(' ', '')}
+bpm=${bpm}
+</details>
+
+Style: ${style}`;
+
+        if (exclude.trim()) {
+          prompt += `\nExclude: ${exclude}`;
+        }
+        
+        prompt += '\n\n';
+        
+        // Add selected elements with some example lyrics for testing
+        let hasAddedVerse = false;
+        let hasAddedChorus = false;
+        
+        selectedElements.forEach((element, index) => {
+          prompt += element + '\n';
+          
+          // Add example content based on element type
+          if (element === '[Verse]' && !hasAddedVerse) {
+            prompt += 'WOMAN: Morning light through autumn leaves\n';
+            prompt += 'Memories of days gone by\n\n';
+            hasAddedVerse = true;
+          } else if (element === '[Chorus]' && !hasAddedChorus) {
+            prompt += 'WOMAN: Time keeps flowing like a river\n';
+            prompt += 'Carrying us along\n\n';
+            hasAddedChorus = true;
+          } else if (element.includes('Solo')) {
+            prompt += '(melodic instrumental section)\n\n';
+          } else if (element.includes('*')) {
+            prompt += '(ambient sound effect)\n\n';
+          } else {
+            prompt += '\n';
+          }
+        });
+        
+        // Display the generated prompt
+        document.getElementById('prompt-output').textContent = prompt;
+      });
+    });
+  </script>
+</body>
+</html>

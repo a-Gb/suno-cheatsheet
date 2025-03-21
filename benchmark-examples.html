@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suno AI Benchmark Examples (v2.1)</title>
+  <style>
+    /* Import modern fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    
+    :root {
+      /* Elegant modern color palette 2025 */
+      --primary: #3B82F6;         /* Vivid blue */
+      --primary-light: #93C5FD;   /* Soft blue */
+      --primary-dark: #1D4ED8;    /* Deep blue */
+      --secondary: #14B8A6;       /* Refined teal */
+      --secondary-light: #5EEAD4; /* Light teal */
+      --secondary-dark: #0F766E;  /* Deep teal */
+      --accent: #F97316;          /* Vibrant orange */
+      --accent-light: #FDBA74;    /* Soft orange */
+      --success: #22C55E;         /* Fresh green */
+      --danger: #EF4444;          /* Clean red */
+      --warning: #EAB308;         /* Rich yellow */
+      --dark: #020617;            /* Deep slate */
+      --text: #0F172A;            /* Rich slate */
+      --text-light: #475569;      /* Medium slate */
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      
+      /* Refined glass UI effects */
+      --glass-white: rgba(255, 255, 255, 0.7);
+      --glass-dark: rgba(2, 6, 23, 0.75);
+      --glass-primary: rgba(59, 130, 246, 0.12);
+      --glass-secondary: rgba(20, 184, 166, 0.12);
+      --glass-accent: rgba(249, 115, 22, 0.12);
+      
+      /* Enhanced shadows with color */
+      --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+      --shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.1), 0 1px 2px 0 rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      --shadow-colored: 0 4px 14px 0 var(--primary-light);
+      --shadow-glow: 0 0 15px rgba(139, 92, 246, 0.5);
+      
+      /* Modern transitions */
+      --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+      
+      /* Enhanced border radius */
+      --radius-sm: 0.375rem;
+      --radius: 0.5rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --radius-full: 9999px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      font-size: 14px;
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      background-attachment: fixed;
+      padding: 30px;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: var(--glass-white);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    h1 {
+      font-size: 28px;
+      margin-bottom: 24px;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      font-size: 22px;
+      margin: 36px 0 18px;
+      color: var(--secondary-dark);
+      padding-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: inline-block;
+      border-bottom: none;
+    }
+    
+    h2:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      border-radius: var(--radius-full);
+    }
+    
+    p {
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+    
+    .template-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 30px;
+    }
+    
+    @media (min-width: 768px) {
+      .template-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .template-card {
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition-bounce);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--glass-white);
+      backdrop-filter: blur(10px) saturate(180%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .template-card:hover {
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+    }
+    
+    .template-header {
+      background: linear-gradient(to right, var(--primary-light), var(--primary));
+      color: white;
+      padding: 16px 20px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .template-header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.5s ease-out;
+    }
+    
+    .template-card:hover .template-header::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .minimal .template-header {
+      background: linear-gradient(to right, var(--gray-400), var(--gray-500));
+    }
+    
+    .standard .template-header {
+      background: linear-gradient(to right, var(--secondary-light), var(--secondary));
+    }
+    
+    .advanced .template-header {
+      background: linear-gradient(to right, var(--primary), var(--accent));
+    }
+    
+    .template-body {
+      padding: 16px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .template-description {
+      margin-bottom: 16px;
+      color: var(--text-light);
+      font-size: 13px;
+    }
+    
+    .template-features {
+      margin-bottom: 16px;
+    }
+    
+    .feature-list {
+      list-style-type: none;
+      margin-left: 0;
+    }
+    
+    .feature-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    
+    .feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+    
+    .code-preview {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+      border-radius: var(--radius-lg);
+      color: #f1f5f9;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 18px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      flex-grow: 1;
+      max-height: 300px;
+      overflow-y: auto;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+    
+    .code-preview::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    
+    .copy-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-full);
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: all var(--transition-bounce);
+      align-self: flex-end;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .copy-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    
+    .copy-btn:hover::before {
+      left: 100%;
+    }
+    
+    .minimal .copy-btn {
+      background-color: var(--gray-500);
+    }
+    
+    .standard .copy-btn {
+      background-color: var(--secondary);
+    }
+    
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: none;
+      gap: 6px;
+      padding: 0 4px;
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: var(--radius-full);
+      transition: all var(--transition-bounce);
+      background-color: var(--glass-white);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-weight: 500;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .tab:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .tab.active {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      font-weight: 500;
+      box-shadow: var(--shadow-colored);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .benchmark-criteria {
+      background-color: var(--glass-secondary);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      margin-top: 40px;
+      backdrop-filter: blur(10px) saturate(180%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .benchmark-criteria h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      background: linear-gradient(to right, var(--secondary-dark), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.01em;
+      display: inline-block;
+    }
+    
+    .criteria-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    
+    .criteria-item {
+      background-color: var(--glass-white);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .criteria-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .criteria-item h4 {
+      color: var(--secondary-dark);
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .criteria-item p {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-bottom: 0;
+    }
+    
+    .intro-text {
+      background-color: var(--glass-primary);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px) saturate(180%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .intro-text::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Suno AI Benchmark Examples (v2.1)</h1>
+    
+    <div class="intro-text">
+      <p>These benchmark templates provide a standardized approach for testing AI music generation services. Each template uses the same core lyrics and basic genre, but with varying levels of control parameters. This allows for consistent comparison across different platforms.</p>
+    </div>
+    
+    <h2>Core Lyrics (Baseline)</h2>
+    <div class="code-preview">Morning light filters through the window (describing what I see)
+Another day begins to unfold (the plot develops)
+The city wakes from slumber (personifying the city)
+As stories waiting to be told (meta-reference to songwriting)
+
+Time moves forward, never backward (stating the obvious)
+Moments passing one by one (counting moments literally)
+We chase the fading shadows (using shadow metaphors)
+Until the day is done (circular time reference)
+
+Looking back at memories (now I'm being nostalgic)
+Scattered like photographs (visual simile alert)
+Some clear as yesterday (temporal comparison)
+Others fading fast (memory deterioration metaphor)
+
+Time moves forward, never backward (repeating chorus exactly)
+Moments passing one by one (maintaining the counting theme)
+We chase the fading shadows (same shadow imagery again)
+Until the day is done (completing the time cycle reference)
+
+The future's never certain (philosophical bridge begins)
+The past cannot be changed (stating temporal truisms)
+Only this moment matters (mindfulness reference)
+As our lives rearrange (ending with change metaphor)</div>
+    
+    <div class="template-grid">
+      <div class="template-card minimal">
+        <div class="template-header">Minimal Control Template</div>
+        <div class="template-body">
+          <div class="template-description">Basic implementation with minimal formatting - just the essentials.</div>
+          <div class="template-features">
+            <ul class="feature-list">
+              <li>Genre specification only</li>
+              <li>Raw lyrics without structure tags</li>
+              <li>No technical parameters</li>
+              <li>No style directives</li>
+              <li>Perfect for baseline benchmarking</li>
+            </ul>
+          </div>
+          <div class="code-preview">[TITLE: Passing Time]
+[GENRES: Pop]
+
+Morning light filters through the window (literally just singing)
+Another day begins to unfold (no formatting here)
+The city wakes from slumber (basic singing continues)
+As stories waiting to be told (minimal template style)
+
+Time moves forward, never backward (simple chorus part)
+Moments passing one by one (no special effects)
+We chase the fading shadows (plain vocals only)
+Until the day is done (keeping it minimal)
+
+Looking back at memories (second verse begins)
+Scattered like photographs (still just singing)
+Some clear as yesterday (minimal style singing)
+Others fading fast (no fancy techniques)
+
+Time moves forward, never backward (chorus repeats)
+Moments passing one by one (same as before)
+We chase the fading shadows (unadorned vocals)
+Until the day is done (basic ending approach)
+
+The future's never certain (simple bridge now)
+The past cannot be changed (no formatting needed)
+Only this moment matters (just plain lyrics)
+As our lives rearrange (minimalist singing style)</div>
+          <button class="copy-btn" data-content="minimal">Copy to Clipboard</button>
+        </div>
+      </div>
+      
+      <div class="template-card standard">
+        <div class="template-header">Standard Control Template</div>
+        <div class="template-body">
+          <div class="template-description">Adds basic structure, vocalist notation, and simple style guidance.</div>
+          <div class="template-features">
+            <ul class="feature-list">
+              <li>Basic song structure tags</li>
+              <li>VOCALIST notation</li>
+              <li>Simple style description</li>
+              <li>Organized verse/chorus format</li>
+              <li>Good for most general testing</li>
+            </ul>
+          </div>
+          <div class="code-preview">[TITLE: Passing Time]
+[GENRES: Pop]
+[MOOD: Reflective, Hopeful]
+
+Style: Modern pop with piano and light percussion, warm vocals
+
+[Verse 1]
+VOCALIST: Morning light filters through the window
+VOCALIST: Another day begins to unfold
+VOCALIST: The city wakes from slumber
+VOCALIST: As stories waiting to be told (singing normally here)
+
+[Chorus]
+VOCALIST: Time moves forward, never backward (this is the chorus part!)
+VOCALIST: Moments passing one by one (still singing the chorus)
+VOCALIST: We chase the fading shadows (shadowy lyrics here)
+VOCALIST: Until the day is done (ending the chorus now)
+
+[Verse 2]
+VOCALIST: Looking back at memories (back to verse singing)
+VOCALIST: Scattered like photographs (using photograph imagery)
+VOCALIST: Some clear as yesterday (wistful tone here)
+VOCALIST: Others fading fast (getting softer on this line)
+
+[Chorus]
+VOCALIST: Time moves forward, never backward (repeating chorus again)
+VOCALIST: Moments passing one by one (maintaining steady rhythm)
+VOCALIST: We chase the fading shadows (more shadow references)
+VOCALIST: Until the day is done (completing chorus section)
+
+[Bridge]
+VOCALIST: The future's never certain (bridge section begins!)
+VOCALIST: The past cannot be changed (philosophical lyrics)
+VOCALIST: Only this moment matters (present-focused message)
+VOCALIST: As our lives rearrange (dramatic bridge ending)
+
+[Outro]
+VOCALIST: Until the day is done (final line, fade out now)</div>
+          <button class="copy-btn" data-content="standard">Copy to Clipboard</button>
+        </div>
+      </div>
+      
+      <div class="template-card advanced">
+        <div class="template-header">Advanced Control Template</div>
+        <div class="template-body">
+          <div class="template-description">Comprehensive control using all available parameters and techniques.</div>
+          <div class="template-features">
+            <ul class="feature-list">
+              <li>Technical parameters (temp, cfg, key, etc.)</li>
+              <li>Detailed style description</li>
+              <li>Sound effects and instrumentation</li>
+              <li>Dynamic transitions and effects</li>
+              <li>Vocal styling and variations</li>
+            </ul>
+          </div>
+          <div class="code-preview">&lt;details&gt;
+temp=0.82
+cfg=7.5
+key=Gmajor
+time_signature=4/4
+bpm=95
+&lt;/details&gt;
+
+[TITLE: Passing Time]
+[GENRES: Pop, Indie Pop]
+[MOOD: Reflective, Hopeful, Introspective]
+[ARTIST: Benchmark Vocals]
+[INSTRUMENTS: Piano, Acoustic Guitar, Light Percussion, Strings]
+
+Style: Modern indie pop with airy atmospheric elements, warm vocals with subtle reverb, minimalist piano intro, building to full arrangement, cinematic strings in bridge
+Exclude: Heavy distortion, aggressive drums, spoken word, electronic beats
+
+[Intro]
+*soft piano melody*
+[gentle string swell]
+
+[Verse 1]
+[Female Vocal]
+Morning light filters through the window
+Another day begins to unfold
+The city wakes from slumber
+As stories waiting to be told
+
+[Pre-Chorus]
+[Build]
+[light percussion enters]
+Here come the drums, they're quite polite
+Just tapping gently, not too bright
+
+[Chorus]
+[Intensify]
+Time moves forward, never backward
+Moments passing one by one
+We chase the fading shadows
+Until the day is done (I'm singing louder now!)
+
+[Interlude]
+[Orchestral]
+(gentle piano and strings)
+Instruments playing while I rest
+No lyrics needed, strings sound best
+
+[Verse 2]
+[Female Vocal]
+Looking back at memories
+Scattered like photographs
+Some clear as yesterday
+[whispers] Others fading fast (yes I'm whispering this part)
+
+[Chorus]
+[Harmonies]
+Time moves forward, never backward (harmonizing with myself!)
+Moments passing one by one (hear those sweet harmony tones)
+We chase the fading shadows (background singers join in)
+Until the day is done (we're all singing together now)
+
+[Bridge]
+[Build Intensity]
+[String Section]
+The future's never certain (dramatic strings intensify)
+The past cannot be changed (building to crescendo)
+Only this moment matters (voice getting stronger)
+As our lives rearrange (reaching emotional peak!)
+
+[Chorus]
+[Layer Vocals]
+Time moves forward, never backward (main vocal)
+Moments passing one by one (echo voices appear)
+We chase the fading shadows (so many layers now)
+Until the day is do-o-one (stretching my vowels dramatically)
+
+[Outro]
+[Decrescendo]
+[Female Vocal]
+[Whisper] Until the day is done (barely audible whisper)
+[Fade Out] (music slowly disappearing...)</div>
+          <button class="copy-btn" data-content="advanced">Copy to Clipboard</button>
+        </div>
+      </div>
+    </div>
+    
+    <h2>Service Adaptation Guide</h2>
+    
+    <div class="tabs">
+      <div class="tab active" data-tab="minimal-adaptation">Minimal Services</div>
+      <div class="tab" data-tab="moderate-adaptation">Moderate Services</div>
+      <div class="tab" data-tab="advanced-adaptation">Advanced Services</div>
+    </div>
+    
+    <div class="tab-content active" data-tab="minimal-adaptation">
+      <p>For services with minimal control features (e.g., Basic Text-to-Music):</p>
+      <ul class="feature-list">
+        <li>Use the Minimal Control Template</li>
+        <li>Remove any Suno-specific tags ([TITLE], [GENRES])</li>
+        <li>Format as plain text with line breaks between sections</li>
+        <li>Focus on the core lyrics and their inherent structure</li>
+      </ul>
+    </div>
+    
+    <div class="tab-content" data-tab="moderate-adaptation">
+      <p>For services with moderate control capabilities:</p>
+      <ul class="feature-list">
+        <li>Use the Standard Control Template</li>
+        <li>Replace [Tags] with service-specific section markers</li>
+        <li>Replace VOCALIST with service-specific voice markers</li>
+        <li>Adapt Style text to match service capabilities</li>
+        <li>Keep core lyrics and structure intact</li>
+      </ul>
+    </div>
+    
+    <div class="tab-content" data-tab="advanced-adaptation">
+      <p>For services with advanced control features:</p>
+      <ul class="feature-list">
+        <li>Use the Advanced Control Template as starting point</li>
+        <li>Replace &lt;details&gt; section with service-specific parameter controls</li>
+        <li>Translate Suno-specific tags to service equivalents:
+          <ul>
+            <li>[Female Vocal] → Service-specific voice selection</li>
+            <li>[Build], [Intensify] → Service-specific dynamic markers</li>
+            <li>Sound effects (*piano*) → Service-specific sound effect notation</li>
+            <li>[Harmonies], [Layer Vocals] → Service-specific vocal layering commands</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="benchmark-criteria">
+      <h3>Benchmark Evaluation Criteria</h3>
+      <p>When comparing outputs across different services, rate each on a 1-10 scale:</p>
+      
+      <div class="criteria-list">
+        <div class="criteria-item">
+          <h4>Lyrical Accuracy</h4>
+          <p>How well were the lyrics followed?</p>
+        </div>
+        <div class="criteria-item">
+          <h4>Structural Adherence</h4>
+          <p>Did the music follow the intended structure?</p>
+        </div>
+        <div class="criteria-item">
+          <h4>Stylistic Interpretation</h4>
+          <p>How well was the style/genre implemented?</p>
+        </div>
+        <div class="criteria-item">
+          <h4>Dynamic Range</h4>
+          <p>Were the indicated dynamic changes implemented?</p>
+        </div>
+        <div class="criteria-item">
+          <h4>Vocal Quality</h4>
+          <p>How natural and appropriate were the vocals?</p>
+        </div>
+        <div class="criteria-item">
+          <h4>Production Quality</h4>
+          <p>Overall audio quality and professional sound</p>
+        </div>
+        <div class="criteria-item">
+          <h4>Parameter Response</h4>
+          <p>How well did the service respond to technical adjustments?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tab switching
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          const tabName = this.getAttribute('data-tab');
+          
+          // Update active tab
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Show corresponding content
+          document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+          });
+          document.querySelector(`.tab-content[data-tab="${tabName}"]`).classList.add('active');
+        });
+      });
+      
+      // Copy to clipboard functionality
+      const copyButtons = document.querySelectorAll('.copy-btn');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const contentType = this.getAttribute('data-content');
+          const codeBlock = this.previousElementSibling;
+          const text = codeBlock.textContent;
+          
+          navigator.clipboard.writeText(text).then(() => {
+            const originalText = this.textContent;
+            this.textContent = 'Copied!';
+            setTimeout(() => {
+              this.textContent = originalText;
+            }, 2000);
+          }).catch(err => {
+            console.error('Could not copy text: ', err);
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
