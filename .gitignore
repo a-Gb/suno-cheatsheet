@@ -17,6 +17,7 @@ Thumbs.db
 *.bak
 *.backup
 *~
+*.html.backup
 
 # Log files
 *.log
