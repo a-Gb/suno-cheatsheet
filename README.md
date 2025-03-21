@@ -16,11 +16,17 @@ A comprehensive reference guide for Suno AI music generation parameters, meta-ta
 - **Benchmark Examples**: Standardized test prompts with humorous, self-referential lyrics
 - **Modern UI**: Elegant glassmorphic interface with responsive design
 
-## Files
+## Project Structure
 
-- `SUNO-CHEATSHEET.html` - The main interactive cheatsheet
-- `benchmark-examples.html` - Standardized benchmark templates for testing
-- `SUNO-CHEATSHEET.md` - Markdown version of the cheatsheet (no interactive features)
+- `/public` - Files served by GitHub Pages
+  - `index.html` - Landing page with auto-redirect
+  - `SUNO-CHEATSHEET.html` - The main interactive cheatsheet
+  - `benchmark-examples.html` - Standardized benchmark templates for testing
+  - `/assets` - Static assets (images, etc.)
+- `/src` - Source files
+  - `/docs` - Markdown documentation
+    - `SUNO-CHEATSHEET.md` - Markdown version of the cheatsheet
+  - `/templates` - HTML templates and partials
 
 ## Usage
 
