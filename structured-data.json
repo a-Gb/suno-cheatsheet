@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Suno AI Ultimate Parameter & Meta-Tag Cheatsheet",
+  "description": "Complete reference guide for Suno AI music generation parameters, meta-tags, style directives, and best practices.",
+  "keywords": "Suno AI, music generation, AI music, prompting, parameters, meta-tags, suno tags, suno reference",
+  "author": {
+    "@type": "Person",
+    "name": "Suno AI Community"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suno AI Community Resources",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://a-gb.github.io/suno-cheatsheet/suno-thumbnail.png"
+    }
+  },
+  "datePublished": "2025-03-21",
+  "dateModified": "2025-03-21",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://a-gb.github.io/suno-cheatsheet/SUNO-CHEATSHEET.html"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Suno AI",
+    "description": "AI-powered music generation platform"
+  }
+}
