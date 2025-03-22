@@ -1,0 +1,40 @@
+{
+  "best_practices": [
+    {
+      "title": "Be Specific About Style",
+      "description": "Instead of general genre labels, describe the specific style elements you want. Include reference artists, eras, or production techniques.",
+      "tip": "Rather than 'rock song', try 'A driving rock track inspired by early 2000s alternative bands with clean guitar verses and distorted chorus sections.'"
+    },
+    {
+      "title": "Structure Your Lyrics Properly",
+      "description": "Use section tags ([Verse], [Chorus], etc.) to clearly delineate your lyrical structure. This helps the model understand the form of your song.",
+      "tip": "Keep verses and choruses to 4-8 lines each for best results. Too many lines in a section may cause the model to lose coherence."
+    },
+    {
+      "title": "Balance Parameters Carefully",
+      "description": "The relationship between parameters like temp and cfg affects your results significantly. Higher temp with lower cfg creates more variation but less prompt adherence.",
+      "tip": "Start with defaults (temp=0.7, cfg=7.0) and make small adjustments. For experimental results, try temp=0.9 with cfg=5.0."
+    },
+    {
+      "title": "Use Meta-Tags Strategically",
+      "description": "Meta-tags like [Include], [Exclude], and [Style] can help focus the generation on specific elements without cluttering your main prompt.",
+      "tip": "Place meta-tags at the top of your prompt for maximum effect. Don't overload with too many contradictory instructions."
+    }
+  ],
+  "dos": [
+    "Start with a clear, concise style description",
+    "Use specific musical references when helpful ('synth sounds like Depeche Mode')",
+    "Keep lyrics thematically consistent throughout sections",
+    "Balance descriptive text with actual lyrics",
+    "Use proper section tags to structure your song",
+    "Specify important parameters like key and BPM when you have preferences"
+  ],
+  "donts": [
+    "Don't overload with too many conflicting style references",
+    "Avoid extremely long section lyrics (over 8-10 lines per section)",
+    "Don't use overly abstract descriptions without concrete musical direction",
+    "Avoid very extreme parameter values (like temp=0.1 or cfg=15)",
+    "Don't rely only on genre labels without supporting details",
+    "Avoid requesting specific unavailable voices ('sounds exactly like Elvis')"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "ai-music-cheatsheet",
+  "version": "1.0.0",
+  "description": "Template system for AI music generation reference guides",
+  "main": "index.js",
+  "scripts": {
+    "build": "node src/templates/build.js",
+    "dev": "npm run build && http-server public",
+    "deploy": "npm run build && gh-pages -d public"
+  },
+  "keywords": [
+    "ai",
+    "music",
+    "reference",
+    "template",
+    "cheatsheet"
+  ],
+  "author": "AI Music Community",
+  "license": "MIT",
+  "dependencies": {
+    "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "http-server": "^14.1.1"
+  }
+}

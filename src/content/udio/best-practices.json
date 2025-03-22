@@ -1,0 +1,42 @@
+{
+  "best_practices": [
+    {
+      "title": "Start With Clear Sonic References",
+      "description": "Include specific reference points for the sound you want, such as artists, songs, or production styles rather than just genre names.",
+      "tip": "Instead of 'make an electronic track', try 'Create an electronic track with warm analog synths like Tycho, tight drums like Bonobo, and atmospheric textures similar to Jon Hopkins.'"
+    },
+    {
+      "title": "Use Proper Section Capitalization",
+      "description": "Udio's section tags use ALL CAPS format ([VERSE], [CHORUS]) for optimal recognition. This helps the model properly structure your song.",
+      "tip": "Always capitalize section tags completely: [VERSE] not [Verse], [CHORUS] not [Chorus], etc."
+    },
+    {
+      "title": "Optimize Parameter Combinations",
+      "description": "The relationship between temperature and guidance significantly affects your results. Higher temperature with lower guidance creates more unexpected variations.",
+      "tip": "For highly creative but less predictable results, try temperature=0.9 with guidance=4.0. For more faithful adherence to your prompt, use temperature=0.6 with guidance=7.0."
+    },
+    {
+      "title": "Create Contrast Between Sections",
+      "description": "Design your lyrics with distinct emotional tones or narrative perspectives between verses, choruses, and bridges to create musical contrast.",
+      "tip": "Try using more detailed, specific imagery in verses and more universal, emotional concepts in choruses to match how music typically flows."
+    }
+  ],
+  "dos": [
+    "Use specific instrumental and production references",
+    "Balance technical description with emotional language",
+    "Keep lyrical sections reasonably sized (4-8 lines)",
+    "Maintain consistent themes throughout your lyrics",
+    "Use ALL CAPS for section tags",
+    "Include tempo and key information when you have specific preferences",
+    "Define both musical and emotional qualities in your prompt"
+  ],
+  "donts": [
+    "Don't mix too many conflicting genre references",
+    "Avoid extremely detailed vocal requirements that are unrealistic",
+    "Don't write overly long sections (more than 8-10 lines)",
+    "Avoid leaving section tags incomplete or improperly formatted",
+    "Don't use extremely high guidance values (>9.0) which can cause stiff results",
+    "Avoid focusing only on lyrics without any musical direction",
+    "Don't request specific artists' exact voices by name"
+  ]
+}

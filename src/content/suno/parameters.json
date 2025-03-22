@@ -1,0 +1,95 @@
+{
+  "technical_parameters": [
+    {
+      "name": "temp",
+      "description": "Controls the randomness/creativity of the output. Higher values produce more varied results.",
+      "values": "0.0 to 1.0",
+      "default": "0.7",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "cfg",
+      "description": "Classifier Free Guidance - controls how closely the model follows your prompt. Higher values adhere more closely.",
+      "values": "1.0 to 10.0",
+      "default": "7.0",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "seed",
+      "description": "Sets a specific random seed for deterministic generation. Same seed + same parameters = same result.",
+      "values": "Any integer",
+      "default": "Random",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "duration",
+      "description": "Controls the length of the generated track in seconds.",
+      "values": "30, 60, 120, 180",
+      "default": "120",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "key",
+      "description": "Musical key for the composition.",
+      "values": "C, C#, D, D#, E, F, F#, G, G#, A, A#, B",
+      "default": "Auto",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "mode",
+      "description": "Musical mode/scale for the composition.",
+      "values": "major, minor",
+      "default": "Auto",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "bpm",
+      "description": "Beats per minute - controls the tempo of the track.",
+      "values": "40 to 200",
+      "default": "Auto",
+      "status": "Official",
+      "status_class": "primary"
+    }
+  ],
+  "additional_parameters": [
+    {
+      "name": "time_sig",
+      "description": "Time signature of the track.",
+      "values": "4/4, 3/4, 6/8, etc.",
+      "default": "4/4",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "reference_song",
+      "description": "A reference song to influence the style and sound of the generation.",
+      "values": "String with artist name and song title",
+      "default": "None",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "top_k",
+      "description": "Limits the model to only consider the top K most likely tokens at each step.",
+      "values": "1 to 150",
+      "default": "50",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "top_p",
+      "description": "Nucleus sampling parameter - sets a probability threshold for token selection.",
+      "values": "0.0 to 1.0",
+      "default": "0.95",
+      "status": "Experimental",
+      "status_class": "warning"
+    }
+  ],
+  "has_additional_parameters": true
+}

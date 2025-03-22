@@ -1,0 +1,142 @@
+{
+  "section_tags": [
+    {
+      "name": "[Verse]",
+      "description": "Marks the verse section of a song, typically containing the main story or narrative.",
+      "example": "[Verse] In the city lights, I found my way...",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[Chorus]",
+      "description": "Marks the chorus section, which is the most memorable and repeated part of the song.",
+      "example": "[Chorus] We're rising up, we won't back down...",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[Intro]",
+      "description": "Marks the introduction section of the song, setting the mood and tone.",
+      "example": "[Intro] (Atmospheric synths building tension)",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[Outro]",
+      "description": "Marks the final section of the song, often bringing closure.",
+      "example": "[Outro] The memories fade as we say goodbye...",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[Bridge]",
+      "description": "Marks a contrasting section that typically appears after the second chorus.",
+      "example": "[Bridge] Everything changes, nothing stays the same...",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[Pre-Chorus]",
+      "description": "Marks a section that builds tension before transitioning into the chorus.",
+      "example": "[Pre-Chorus] The tension builds as we prepare to fly...",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[Post-Chorus]",
+      "description": "Marks a section that follows and extends the chorus.",
+      "example": "[Post-Chorus] (Instrumental hook with vocal ad-libs)",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[Instrumental]",
+      "description": "Marks a section without lyrics, showcasing the instrumental elements.",
+      "example": "[Instrumental] (Epic guitar solo)",
+      "status": "Official",
+      "status_class": "primary"
+    }
+  ],
+  "meta_tags": [
+    {
+      "name": "[Include]",
+      "description": "Specifies instruments or elements to include in the arrangement.",
+      "example": "[Include] Electric guitar, bass, drums, synthesizers",
+      "status": "Community",
+      "status_class": "secondary"
+    },
+    {
+      "name": "[Exclude]",
+      "description": "Specifies instruments or elements to exclude from the arrangement.",
+      "example": "[Exclude] Vocals, acoustic instruments",
+      "status": "Community",
+      "status_class": "secondary"
+    },
+    {
+      "name": "[Mood]",
+      "description": "Sets the emotional tone of the composition.",
+      "example": "[Mood] Melancholic but hopeful",
+      "status": "Community",
+      "status_class": "secondary"
+    },
+    {
+      "name": "[Style]",
+      "description": "Defines the musical style or genre.",
+      "example": "[Style] Synthwave with orchestral elements",
+      "status": "Community",
+      "status_class": "secondary"
+    },
+    {
+      "name": "[Structure]",
+      "description": "Defines the overall song structure.",
+      "example": "[Structure] Intro-Verse-Chorus-Verse-Chorus-Bridge-Chorus-Outro",
+      "status": "Community",
+      "status_class": "secondary"
+    },
+    {
+      "name": "[Theme]",
+      "description": "Sets the lyrical theme or subject matter.",
+      "example": "[Theme] Overcoming obstacles and finding inner strength",
+      "status": "Community",
+      "status_class": "secondary"
+    }
+  ],
+  "instrument_tags": [
+    {
+      "name": "[Vocals]",
+      "description": "Specifies vocal style or direction.",
+      "example": "[Vocals] Female, with breathy, emotional delivery",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "[Guitar]",
+      "description": "Specifies guitar style or direction.",
+      "example": "[Guitar] Distorted power chords with melody leads",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "[Drums]",
+      "description": "Specifies drum style or direction.",
+      "example": "[Drums] Heavy kick, electronic percussion, glitch effects",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "[Bass]",
+      "description": "Specifies bass style or direction.",
+      "example": "[Bass] Deep, growling bassline with synth textures",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "[Synth]",
+      "description": "Specifies synthesizer style or direction.",
+      "example": "[Synth] Ethereal pads and arpeggiated sequences",
+      "status": "Experimental",
+      "status_class": "warning"
+    }
+  ],
+  "has_instrument_tags": true
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="{{description}}">
+  <meta name="keywords" content="{{keywords}}">
+  <meta name="author" content="{{author}}">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="{{og_title}}">
+  <meta property="og:description" content="{{og_description}}">
+  <meta property="og:image" content="{{og_image}}">
+  <meta property="og:url" content="{{og_url}}">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <title>{{title}}</title>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  {{#extra_styles}}
+  <link rel="stylesheet" href="{{.}}">
+  {{/extra_styles}}
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{canonical_url}}" />
+  
+  <!-- Structured data for better search indexing -->
+  <script type="application/ld+json">
+    {{{structured_data}}}
+  </script>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <img src="{{logo_url}}" alt="{{platform_name}} Logo"> 
+        {{platform_name}} Reference
+      </a>
+      
+      <nav class="nav">
+        {{#nav_items}}
+        <a href="{{url}}" class="nav-link {{#active}}active{{/active}}">{{label}}</a>
+        {{/nav_items}}
+        
+        <div class="theme-control">
+          <select id="theme-selector" aria-label="Select theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="system">System</option>
+          </select>
+        </div>
+      </nav>
+      
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  
+  <div class="container">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search..." aria-label="Search">
+        <div id="search-results" class="search-results"></div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        {{#sidebar_sections}}
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading">{{heading}}</h3>
+          {{#links}}
+          <a href="{{url}}" class="sidebar-link {{#active}}active{{/active}}">{{label}}</a>
+          {{/links}}
+        </div>
+        {{/sidebar_sections}}
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      {{{content}}}
+    </main>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-copyright">
+        &copy; {{current_year}} {{copyright}}
+      </div>
+      <div class="footer-links">
+        {{#footer_links}}
+        <a href="{{url}}">{{label}}</a>
+        {{/footer_links}}
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="/assets/js/main.js"></script>
+  {{#extra_scripts}}
+  <script src="{{.}}"></script>
+  {{/extra_scripts}}
+  
+  <!-- Custom scripts specific to this page -->
+  {{#custom_script}}
+    <script>
+      {{{custom_script}}}
+    </script>
+  {{/custom_script}}
+</body>
+</html>

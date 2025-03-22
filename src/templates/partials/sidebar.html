@@ -1,0 +1,18 @@
+<!-- Sidebar Partial -->
+<aside id="sidebar" class="sidebar">
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search..." aria-label="Search">
+    <div id="search-results" class="search-results"></div>
+  </div>
+  
+  <nav class="sidebar-nav">
+    {{#sidebar_sections}}
+    <div class="sidebar-section">
+      <h3 class="sidebar-heading">{{heading}}</h3>
+      {{#links}}
+      <a href="{{url}}" class="sidebar-link {{#active}}active{{/active}}">{{label}}</a>
+      {{/links}}
+    </div>
+    {{/sidebar_sections}}
+  </nav>
+</aside>

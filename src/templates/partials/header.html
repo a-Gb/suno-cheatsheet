@@ -1,0 +1,27 @@
+<!-- Header Partial -->
+<header class="header">
+  <div class="header-content">
+    <a href="/" class="logo">
+      <img src="{{logo_url}}" alt="{{platform_name}} Logo"> 
+      {{platform_name}} Reference
+    </a>
+    
+    <nav class="nav">
+      {{#nav_items}}
+      <a href="{{url}}" class="nav-link {{#active}}active{{/active}}">{{label}}</a>
+      {{/nav_items}}
+      
+      <div class="theme-control">
+        <select id="theme-selector" aria-label="Select theme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="system">System</option>
+        </select>
+      </div>
+    </nav>
+    
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

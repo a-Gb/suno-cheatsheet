@@ -1,0 +1,248 @@
+<!-- Cheatsheet Layout Template -->
+<header class="page-header">
+  <h1>{{platform_name}} Ultimate Parameter & Meta-Tag Cheatsheet</h1>
+  <p class="version-tag">Version {{version}}</p>
+  <p class="intro-text">{{intro_text}}</p>
+</header>
+
+<div class="tabs">
+  <button class="tab active" data-tab="parameters-tab">Parameters</button>
+  <button class="tab" data-tab="tags-tab">Tags & Structure</button>
+  <button class="tab" data-tab="examples-tab">Examples</button>
+  <button class="tab" data-tab="best-practices-tab">Best Practices</button>
+</div>
+
+<!-- Parameters Tab -->
+<div id="parameters-tab" class="tab-content active">
+  <section id="parameters-section" class="content-section">
+    <h2>Technical Parameters</h2>
+    <p>{{parameters_intro}}</p>
+    
+    <table class="parameters-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+          <th>Values</th>
+          <th>Default</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#technical_parameters}}
+        <tr>
+          <td><code>{{name}}</code></td>
+          <td>{{description}}</td>
+          <td>{{values}}</td>
+          <td>{{default}}</td>
+          <td><span class="badge badge-{{status_class}}">{{status}}</span></td>
+        </tr>
+        {{/technical_parameters}}
+      </tbody>
+    </table>
+    
+    {{#has_additional_parameters}}
+    <h3>Additional Parameters</h3>
+    <table class="parameters-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+          <th>Values</th>
+          <th>Default</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#additional_parameters}}
+        <tr>
+          <td><code>{{name}}</code></td>
+          <td>{{description}}</td>
+          <td>{{values}}</td>
+          <td>{{default}}</td>
+          <td><span class="badge badge-{{status_class}}">{{status}}</span></td>
+        </tr>
+        {{/additional_parameters}}
+      </tbody>
+    </table>
+    {{/has_additional_parameters}}
+  </section>
+</div>
+
+<!-- Tags Tab -->
+<div id="tags-tab" class="tab-content">
+  <section id="tags-section" class="content-section">
+    <h2>Structure Tags</h2>
+    <p>{{tags_intro}}</p>
+    
+    <h3>Section Tags</h3>
+    <table class="tags-table">
+      <thead>
+        <tr>
+          <th>Tag</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#section_tags}}
+        <tr>
+          <td><code>{{name}}</code></td>
+          <td>{{description}}</td>
+          <td><code>{{example}}</code></td>
+          <td><span class="badge badge-{{status_class}}">{{status}}</span></td>
+        </tr>
+        {{/section_tags}}
+      </tbody>
+    </table>
+    
+    <h3>Meta Tags</h3>
+    <table class="tags-table">
+      <thead>
+        <tr>
+          <th>Tag</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#meta_tags}}
+        <tr>
+          <td><code>{{name}}</code></td>
+          <td>{{description}}</td>
+          <td><code>{{example}}</code></td>
+          <td><span class="badge badge-{{status_class}}">{{status}}</span></td>
+        </tr>
+        {{/meta_tags}}
+      </tbody>
+    </table>
+    
+    {{#has_instrument_tags}}
+    <h3>Instrument Tags</h3>
+    <table class="tags-table">
+      <thead>
+        <tr>
+          <th>Tag</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#instrument_tags}}
+        <tr>
+          <td><code>{{name}}</code></td>
+          <td>{{description}}</td>
+          <td><code>{{example}}</code></td>
+          <td><span class="badge badge-{{status_class}}">{{status}}</span></td>
+        </tr>
+        {{/instrument_tags}}
+      </tbody>
+    </table>
+    {{/has_instrument_tags}}
+  </section>
+</div>
+
+<!-- Examples Tab -->
+<div id="examples-tab" class="tab-content">
+  <section id="examples-section" class="content-section">
+    <h2>Example Prompts</h2>
+    <p>{{examples_intro}}</p>
+    
+    <div class="example-tabs">
+      <button class="example-tab active" data-example-tab="basic-example">Basic</button>
+      <button class="example-tab" data-example-tab="advanced-example">Advanced</button>
+      <button class="example-tab" data-example-tab="complex-example">Complex</button>
+    </div>
+    
+    <div id="basic-example" class="example-content active">
+      <h3>Basic Example</h3>
+      <pre><code>{{basic_example}}</code></pre>
+      <p>{{basic_example_description}}</p>
+    </div>
+    
+    <div id="advanced-example" class="example-content">
+      <h3>Advanced Example</h3>
+      <pre><code>{{advanced_example}}</code></pre>
+      <p>{{advanced_example_description}}</p>
+    </div>
+    
+    <div id="complex-example" class="example-content">
+      <h3>Complex Example</h3>
+      <pre><code>{{complex_example}}</code></pre>
+      <p>{{complex_example_description}}</p>
+    </div>
+  </section>
+</div>
+
+<!-- Best Practices Tab -->
+<div id="best-practices-tab" class="tab-content">
+  <section id="best-practices-section" class="content-section">
+    <h2>Best Practices</h2>
+    <p>{{best_practices_intro}}</p>
+    
+    <div class="cards-container">
+      {{#best_practices}}
+      <div class="card">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <div class="card-tip">
+          <strong>Tip:</strong> {{tip}}
+        </div>
+      </div>
+      {{/best_practices}}
+    </div>
+    
+    <h3>Do's and Don'ts</h3>
+    <div class="do-dont-container">
+      <div class="do-section">
+        <h4>Do</h4>
+        <ul>
+          {{#dos}}
+          <li>{{.}}</li>
+          {{/dos}}
+        </ul>
+      </div>
+      <div class="dont-section">
+        <h4>Don't</h4>
+        <ul>
+          {{#donts}}
+          <li>{{.}}</li>
+          {{/donts}}
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section id="versions-section" class="content-section">
+  <h2>Version History</h2>
+  <div class="version-history">
+    {{#versions}}
+    <div class="version-item">
+      <h3>{{version}} <span class="version-date">{{date}}</span></h3>
+      <ul>
+        {{#changes}}
+        <li>{{.}}</li>
+        {{/changes}}
+      </ul>
+    </div>
+    {{/versions}}
+  </div>
+</section>
+
+<!-- Footer Information -->
+<section id="about-section" class="content-section text-center">
+  <h2>About This Reference</h2>
+  <p>{{about_text}}</p>
+  
+  <div class="about-links">
+    {{#about_links}}
+    <a href="{{url}}" class="about-link">{{label}}</a>
+    {{/about_links}}
+  </div>
+  
+  <p class="disclaimer">{{disclaimer}}</p>
+</section>

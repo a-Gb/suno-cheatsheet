@@ -1,0 +1,87 @@
+{
+  "technical_parameters": [
+    {
+      "name": "temperature",
+      "description": "Controls the randomness/creativity of the output. Higher values produce more varied results.",
+      "values": "0.0 to 1.0",
+      "default": "0.8",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "guidance",
+      "description": "Controls how closely the model follows your prompt. Higher values adhere more closely.",
+      "values": "1.0 to 10.0",
+      "default": "6.0",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "seed",
+      "description": "Sets a specific random seed for deterministic generation. Same seed + same parameters = same result.",
+      "values": "Any integer",
+      "default": "Random",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "length",
+      "description": "Controls the length of the generated track in seconds.",
+      "values": "30, 60, 120, 180, 240",
+      "default": "120",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "key_signature",
+      "description": "Musical key for the composition.",
+      "values": "C, C#, D, D#, E, F, F#, G, G#, A, A#, B (with major/minor)",
+      "default": "Auto",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "tempo",
+      "description": "Beats per minute - controls the speed of the track.",
+      "values": "40 to 200",
+      "default": "Auto",
+      "status": "Official",
+      "status_class": "primary"
+    }
+  ],
+  "additional_parameters": [
+    {
+      "name": "time_signature",
+      "description": "Time signature of the track.",
+      "values": "4/4, 3/4, 6/8, etc.",
+      "default": "4/4",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "style_reference",
+      "description": "A reference song or artist to influence the style and sound of the generation.",
+      "values": "String with artist name and song title",
+      "default": "None",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "diversity",
+      "description": "Controls the diversity of the output. Higher values lead to more diverse results.",
+      "values": "0.0 to 1.0",
+      "default": "0.5",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "energy",
+      "description": "Controls the energy level of the track. Higher values create more intense, dynamic pieces.",
+      "values": "0.0 to 1.0",
+      "default": "0.7",
+      "status": "Experimental",
+      "status_class": "warning"
+    }
+  ],
+  "has_additional_parameters": true
+}

@@ -1,36 +1,48 @@
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Editor directories and files
-.idea/
-.vscode/
-*.sublime-project
-*.sublime-workspace
-
-# Backup files
-*.bak
-*.backup
-*~
-*.html.backup
-
-# Log files
-*.log
-
-# Node modules if any
+# Node.js dependencies
 node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
 
-# Placeholder files
-*.placeholder
+# Build artifacts
+/build
+/dist
+
+# Development server
+.cache/
 
 # Environment variables
 .env
 .env.local
-.env.development
-.env.test
-.env.production
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Testing
+/coverage
+
+# Deployment
+.gh-pages-cache/
+
+# Temporary files
+.tmp/
+.temp/
+*.tmp
+*.temp
+*.bak

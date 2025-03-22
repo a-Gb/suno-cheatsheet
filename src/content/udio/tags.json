@@ -1,0 +1,142 @@
+{
+  "section_tags": [
+    {
+      "name": "[VERSE]",
+      "description": "Marks the verse section of a song, typically containing the main story or narrative.",
+      "example": "[VERSE] Walking through the neon streets, memories flood back...",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[CHORUS]",
+      "description": "Marks the chorus section, which is the most memorable and repeated part of the song.",
+      "example": "[CHORUS] Never forget where we started, always remember who we are...",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[INTRO]",
+      "description": "Marks the introduction section of the song, setting the mood and tone.",
+      "example": "[INTRO] (Ambient city sounds with soft piano)",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[OUTRO]",
+      "description": "Marks the final section of the song, often bringing closure.",
+      "example": "[OUTRO] As the lights dim and the crowd fades away...",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[BRIDGE]",
+      "description": "Marks a contrasting section that typically appears after the second chorus.",
+      "example": "[BRIDGE] Breaking through the walls I've built around my heart...",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[PRE-CHORUS]",
+      "description": "Marks a section that builds tension before transitioning into the chorus.",
+      "example": "[PRE-CHORUS] The pressure builds with every breath I take...",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[HOOK]",
+      "description": "Marks a catchy, repeatable section designed to 'hook' the listener.",
+      "example": "[HOOK] Live fast, dream big, never look back!",
+      "status": "Official",
+      "status_class": "primary"
+    },
+    {
+      "name": "[INSTRUMENTAL]",
+      "description": "Marks a section without lyrics, showcasing the instrumental elements.",
+      "example": "[INSTRUMENTAL] (Dramatic synth solo with pulsing beat)",
+      "status": "Official",
+      "status_class": "primary"
+    }
+  ],
+  "meta_tags": [
+    {
+      "name": "[INSTRUMENTS]",
+      "description": "Specifies instruments to include in the arrangement.",
+      "example": "[INSTRUMENTS] Piano, strings, electronic drums, bass synth",
+      "status": "Community",
+      "status_class": "secondary"
+    },
+    {
+      "name": "[AVOID]",
+      "description": "Specifies instruments or elements to exclude from the arrangement.",
+      "example": "[AVOID] Distorted guitars, brass instruments",
+      "status": "Community",
+      "status_class": "secondary"
+    },
+    {
+      "name": "[FEELING]",
+      "description": "Sets the emotional tone of the composition.",
+      "example": "[FEELING] Nostalgic with hopeful undertones",
+      "status": "Community",
+      "status_class": "secondary"
+    },
+    {
+      "name": "[GENRE]",
+      "description": "Defines the musical style or genre.",
+      "example": "[GENRE] Future bass with orchestral influences",
+      "status": "Community",
+      "status_class": "secondary"
+    },
+    {
+      "name": "[FORM]",
+      "description": "Defines the overall song structure.",
+      "example": "[FORM] Intro-Verse-Chorus-Verse-Chorus-Bridge-Chorus-Outro",
+      "status": "Community",
+      "status_class": "secondary"
+    },
+    {
+      "name": "[SUBJECT]",
+      "description": "Sets the lyrical theme or subject matter.",
+      "example": "[SUBJECT] Digital connection in an increasingly isolated world",
+      "status": "Community",
+      "status_class": "secondary"
+    }
+  ],
+  "instrument_tags": [
+    {
+      "name": "[VOICE]",
+      "description": "Specifies vocal style or direction.",
+      "example": "[VOICE] Male, low range, emotional and slightly raspy",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "[GUITAR]",
+      "description": "Specifies guitar style or direction.",
+      "example": "[GUITAR] Clean electric with delay and reverb, arpeggiated patterns",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "[PERCUSSION]",
+      "description": "Specifies percussion style or direction.",
+      "example": "[PERCUSSION] Minimal electronic kit with glitch elements and deep kick",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "[BASS]",
+      "description": "Specifies bass style or direction.",
+      "example": "[BASS] Deep sub bass with occasional mid-range fills",
+      "status": "Experimental",
+      "status_class": "warning"
+    },
+    {
+      "name": "[KEYBOARDS]",
+      "description": "Specifies keyboard or synth style or direction.",
+      "example": "[KEYBOARDS] Atmospheric pads with subtle modulation and bright leads",
+      "status": "Experimental",
+      "status_class": "warning"
+    }
+  ],
+  "has_instrument_tags": true
+}

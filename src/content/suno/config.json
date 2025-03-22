@@ -1,0 +1,132 @@
+{
+  "platform": {
+    "name": "Suno AI",
+    "logo_url": "/assets/images/suno-logo.png", 
+    "version": "2.1",
+    "description": "Complete reference guide for Suno AI music generation parameters, meta-tags, style directives, and best practices.",
+    "keywords": "Suno AI, music generation, AI music, prompting, parameters, meta-tags, suno cheatsheet, suno reference, suno tags, suno parameters, how to use suno, suno meta tags, suno prompt guide, suno reference sheet",
+    "author": "Suno AI Community",
+    "copyright": "Suno AI Community Resources",
+    "disclaimer": "This reference guide is community-maintained and not officially affiliated with Suno AI. All parameters and tags are documented based on community knowledge."
+  },
+  "meta": {
+    "og_title": "Suno AI Ultimate Parameter & Meta-Tag Cheatsheet",
+    "og_description": "Complete reference for Suno AI music generation with parameters, tags, and examples",
+    "og_image": "/assets/images/suno-thumbnail.png",
+    "og_url": "https://a-gb.github.io/suno-cheatsheet/",
+    "canonical_url": "https://a-gb.github.io/suno-cheatsheet/"
+  },
+  "navigation": {
+    "nav_items": [
+      {
+        "label": "Cheatsheet",
+        "url": "/",
+        "active": true
+      },
+      {
+        "label": "Benchmarks",
+        "url": "/benchmark-examples.html",
+        "active": false
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/a-Gb/suno-cheatsheet",
+        "active": false
+      }
+    ],
+    "sidebar_sections": [
+      {
+        "heading": "Parameters",
+        "links": [
+          {
+            "label": "Technical Parameters",
+            "url": "#parameters-section",
+            "active": true
+          },
+          {
+            "label": "Advanced Parameters",
+            "url": "#advanced-parameters",
+            "active": false
+          }
+        ]
+      },
+      {
+        "heading": "Tags & Structure",
+        "links": [
+          {
+            "label": "Section Tags",
+            "url": "#tags-section",
+            "active": false
+          },
+          {
+            "label": "Meta Tags",
+            "url": "#meta-tags",
+            "active": false
+          },
+          {
+            "label": "Instrument Tags",
+            "url": "#instrument-tags",
+            "active": false
+          }
+        ]
+      },
+      {
+        "heading": "Reference",
+        "links": [
+          {
+            "label": "Examples",
+            "url": "#examples-section",
+            "active": false
+          },
+          {
+            "label": "Best Practices",
+            "url": "#best-practices-section",
+            "active": false
+          },
+          {
+            "label": "Version History",
+            "url": "#versions-section",
+            "active": false
+          },
+          {
+            "label": "About",
+            "url": "#about-section",
+            "active": false
+          }
+        ]
+      }
+    ],
+    "footer_links": [
+      {
+        "label": "GitHub Repository",
+        "url": "https://github.com/a-Gb/suno-cheatsheet"
+      },
+      {
+        "label": "Report Issue",
+        "url": "https://github.com/a-Gb/suno-cheatsheet/issues"
+      },
+      {
+        "label": "Contribute",
+        "url": "https://github.com/a-Gb/suno-cheatsheet#contributing"
+      }
+    ]
+  },
+  "content": {
+    "intro_text": "A comprehensive reference guide for Suno AI music generation parameters, meta-tags, and best practices. Use this cheatsheet to improve your prompts and get better results.",
+    "parameters_intro": "These technical parameters control various aspects of generation. Adjust them to fine-tune your results.",
+    "tags_intro": "Structure and meta tags help organize your prompts and influence the generation process.",
+    "examples_intro": "Study these example prompts to better understand how to effectively use parameters and tags together.",
+    "best_practices_intro": "Follow these guidelines to get the best results from Suno AI.",
+    "about_text": "This cheatsheet is maintained by the community to help users get the most out of Suno AI. Feel free to contribute by submitting improvements or corrections.",
+    "about_links": [
+      {
+        "label": "Official Suno AI Website",
+        "url": "https://suno.ai"
+      },
+      {
+        "label": "Contribute to this Guide",
+        "url": "https://github.com/a-Gb/suno-cheatsheet"
+      }
+    ]
+  }
+}
