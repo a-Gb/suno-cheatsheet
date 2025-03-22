@@ -114,11 +114,37 @@
 </header>
 
 <div class="tabs">
-  <button class="tab active" data-tab="parameters-tab">Parameters</button>
-  <button class="tab" data-tab="tags-tab">Tags & Structure</button>
-  <button class="tab" data-tab="examples-tab">Examples</button>
-  <button class="tab" data-tab="best-practices-tab">Best Practices</button>
+  <button class="tab active" data-tab="parameters-tab" onclick="showTab('parameters-tab')">Parameters</button>
+  <button class="tab" data-tab="tags-tab" onclick="showTab('tags-tab')">Tags & Structure</button>
+  <button class="tab" data-tab="examples-tab" onclick="showTab('examples-tab')">Examples</button>
+  <button class="tab" data-tab="best-practices-tab" onclick="showTab('best-practices-tab')">Best Practices</button>
 </div>
+
+<script>
+function showTab(tabId) {
+  // Hide all tab contents
+  const tabContents = document.querySelectorAll('.tab-content');
+  tabContents.forEach(content => {
+    content.style.display = 'none';
+  });
+  
+  // Remove active class from all tabs
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(tab => {
+    tab.classList.remove('active');
+  });
+  
+  // Show selected tab content and set active class
+  document.getElementById(tabId).style.display = 'block';
+  document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+}
+
+// Initialize tabs
+document.addEventListener('DOMContentLoaded', function() {
+  // Show the first tab by default
+  showTab('parameters-tab');
+});
+</script>
 
 <!-- Parameters Tab -->
 <div id="parameters-tab" class="tab-content active">
@@ -398,10 +424,36 @@
     <p></p>
     
     <div class="example-tabs">
-      <button class="example-tab active" data-example-tab="basic-example">Basic</button>
-      <button class="example-tab" data-example-tab="advanced-example">Advanced</button>
-      <button class="example-tab" data-example-tab="complex-example">Complex</button>
+      <button class="example-tab active" data-example-tab="basic-example" onclick="showExampleTab('basic-example')">Basic</button>
+      <button class="example-tab" data-example-tab="advanced-example" onclick="showExampleTab('advanced-example')">Advanced</button>
+      <button class="example-tab" data-example-tab="complex-example" onclick="showExampleTab('complex-example')">Complex</button>
     </div>
+    
+    <script>
+    function showExampleTab(exampleId) {
+      // Hide all example contents
+      const exampleContents = document.querySelectorAll('.example-content');
+      exampleContents.forEach(content => {
+        content.style.display = 'none';
+      });
+      
+      // Remove active class from all example tabs
+      const tabs = document.querySelectorAll('.example-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+      
+      // Show selected example content and set active class
+      document.getElementById(exampleId).style.display = 'block';
+      document.querySelector(`[data-example-tab="${exampleId}"]`).classList.add('active');
+    }
+    
+    // Initialize example tabs
+    document.addEventListener('DOMContentLoaded', function() {
+      // Show the first example by default
+      showExampleTab('basic-example');
+    });
+    </script>
     
     <div id="basic-example" class="example-content active">
       <h3>Basic Example</h3>
