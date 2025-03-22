@@ -12,9 +12,9 @@
   "meta": {
     "og_title": "Udio AI Ultimate Parameter & Meta-Tag Cheatsheet",
     "og_description": "Complete reference for Udio AI music generation with parameters, tags, and examples",
-    "og_image": "/assets/images/udio-thumbnail.png",
-    "og_url": "https://a-gb.github.io/udio-cheatsheet/",
-    "canonical_url": "https://a-gb.github.io/udio-cheatsheet/"
+    "og_image": "https://a-gb.github.io/suno-cheatsheet/assets/images/udio-thumbnail.png",
+    "og_url": "https://a-gb.github.io/suno-cheatsheet/udio-cheatsheet.html",
+    "canonical_url": "https://a-gb.github.io/suno-cheatsheet/udio-cheatsheet.html"
   },
   "navigation": {
     "nav_items": [

@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://music-reference.ai/</loc>
+    <loc>https://a-gb.github.io/suno-cheatsheet/</loc>
     <lastmod>2025-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://music-reference.ai/suno-cheatsheet.html</loc>
+    <loc>https://a-gb.github.io/suno-cheatsheet/suno-cheatsheet.html</loc>
     <lastmod>2025-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://music-reference.ai/udio-cheatsheet.html</loc>
+    <loc>https://a-gb.github.io/suno-cheatsheet/udio-cheatsheet.html</loc>
     <lastmod>2025-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://music-reference.ai/benchmark-examples.html</loc>
+    <loc>https://a-gb.github.io/suno-cheatsheet/benchmark-examples.html</loc>
     <lastmod>2025-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://music-reference.ai/suno-showcase-example.html</loc>
+    <loc>https://a-gb.github.io/suno-cheatsheet/suno-showcase-example.html</loc>
     <lastmod>2025-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Common search variations -->
   <url>
-    <loc>https://music-reference.ai/suno-tags-reference.html</loc>
+    <loc>https://a-gb.github.io/suno-cheatsheet/suno-tags-reference.html</loc>
     <lastmod>2025-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://music-reference.ai/suno-parameters-guide.html</loc>
+    <loc>https://a-gb.github.io/suno-cheatsheet/suno-parameters-guide.html</loc>
     <lastmod>2025-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

@@ -12,7 +12,7 @@
   "meta": {
     "og_title": "Suno AI Ultimate Parameter & Meta-Tag Cheatsheet",
     "og_description": "Complete reference for Suno AI music generation with parameters, tags, and examples",
-    "og_image": "/assets/images/suno-thumbnail.png",
+    "og_image": "https://a-gb.github.io/suno-cheatsheet/assets/images/suno-thumbnail.png",
     "og_url": "https://a-gb.github.io/suno-cheatsheet/",
     "canonical_url": "https://a-gb.github.io/suno-cheatsheet/"
   },
