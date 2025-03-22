@@ -1,0 +1,33 @@
+TEMPLATE FILES:
+base: EXISTS (3382 bytes)
+cheatsheet: EXISTS (6675 bytes)
+header: EXISTS (811 bytes)
+sidebar: EXISTS (567 bytes)
+footer: EXISTS (315 bytes)
+
+CONTENT FILES FOR SUNO:
+config: EXISTS (4436 bytes)
+parameters: EXISTS (2862 bytes)
+tags: EXISTS (4847 bytes)
+examples: EXISTS (2933 bytes)
+bestPractices: EXISTS (2379 bytes)
+
+LOADING CONTENT DATA:
+Config loaded successfully
+Platform name: Suno AI
+Platform version: 2.1
+Parameters loaded successfully
+Technical parameters count: 7
+Tags loaded successfully
+Section tags count: 8
+Examples loaded successfully
+Has basic example: Yes
+Best practices loaded successfully
+Best practices count: 4
+
+TEMPLATE RENDERING TEST:
+Cheatsheet template rendered successfully
+Rendered cheatsheet length: 3519 characters
+Final HTML rendered successfully
+Final HTML length: 5907 characters
+Sample HTML saved to debug-output.html

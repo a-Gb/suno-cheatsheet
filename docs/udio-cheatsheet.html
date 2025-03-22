@@ -5,28 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Complete reference guide for Udio AI music generation parameters, meta-tags, style directives, and best practices.">
+  <meta name="keywords" content="Udio AI, music generation, AI music, prompting, parameters, meta-tags, udio cheatsheet, udio reference, udio tags, udio parameters, how to use udio, udio meta tags, udio prompt guide, udio reference sheet">
+  <meta name="author" content="Udio AI Community">
   
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
+  <meta property="og:title" content="Udio AI Ultimate Parameter &amp; Meta-Tag Cheatsheet">
+  <meta property="og:description" content="Complete reference for Udio AI music generation with parameters, tags, and examples">
+  <meta property="og:image" content="https:&#x2F;&#x2F;a-gb.github.io&#x2F;suno-cheatsheet&#x2F;assets&#x2F;images&#x2F;udio-thumbnail.png">
+  <meta property="og:url" content="https:&#x2F;&#x2F;a-gb.github.io&#x2F;suno-cheatsheet&#x2F;udio-cheatsheet.html">
   <meta name="twitter:card" content="summary_large_image">
   
-  <title></title>
+  <title>Udio AI Ultimate Parameter &amp; Meta-Tag Cheatsheet (v1.0)</title>
   
   <!-- Styles -->
   <link rel="stylesheet" href="./assets/css/styles.css">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="" />
+  <link rel="canonical" href="https:&#x2F;&#x2F;a-gb.github.io&#x2F;suno-cheatsheet&#x2F;udio-cheatsheet.html" />
   
   <!-- Structured data for better search indexing -->
   <script type="application/ld+json">
-    
+    {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Udio AI Ultimate Parameter & Meta-Tag Cheatsheet",
+  "description": "Complete reference for Udio AI music generation with parameters, tags, and examples",
+  "author": {
+    "@type": "Person",
+    "name": "Udio AI Community"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Udio AI Community Resources"
+  }
+}
   </script>
   
   <!-- Favicon -->
@@ -37,11 +50,14 @@
   <header class="header">
     <div class="header-content">
       <a href="./" class="logo">
-        <img src="" alt=" Logo"> 
-         Reference
+        <img src=".&#x2F;assets&#x2F;images&#x2F;udio-logo.png" alt="Udio AI Logo"> 
+        Udio AI Reference
       </a>
       
       <nav class="nav">
+        <a href=".&#x2F;" class="nav-link active">Cheatsheet</a>
+        <a href=".&#x2F;benchmark-examples.html" class="nav-link ">Benchmarks</a>
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;a-Gb&#x2F;udio-cheatsheet" class="nav-link ">GitHub</a>
         
         <div class="theme-control">
           <select id="theme-selector" aria-label="Select theme">
@@ -67,6 +83,24 @@
       </div>
       
       <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading">Parameters</h3>
+          <a href="#parameters-section" class="sidebar-link active">Technical Parameters</a>
+          <a href="#advanced-parameters" class="sidebar-link ">Advanced Parameters</a>
+        </div>
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading">Tags &amp; Structure</h3>
+          <a href="#tags-section" class="sidebar-link ">Section Tags</a>
+          <a href="#meta-tags" class="sidebar-link ">Meta Tags</a>
+          <a href="#instrument-tags" class="sidebar-link ">Instrument Tags</a>
+        </div>
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading">Reference</h3>
+          <a href="#examples-section" class="sidebar-link ">Examples</a>
+          <a href="#best-practices-section" class="sidebar-link ">Best Practices</a>
+          <a href="#versions-section" class="sidebar-link ">Version History</a>
+          <a href="#about-section" class="sidebar-link ">About</a>
+        </div>
       </nav>
     </aside>
     
@@ -74,7 +108,7 @@
     <main class="main-content">
       <!-- Cheatsheet Layout Template -->
 <header class="page-header">
-  <h1> Ultimate Parameter & Meta-Tag Cheatsheet</h1>
+  <h1>Udio AI Ultimate Parameter & Meta-Tag Cheatsheet</h1>
   <p class="version-tag">Version </p>
   <p class="intro-text"></p>
 </header>
@@ -103,9 +137,93 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><code>temperature</code></td>
+          <td>Controls the randomness&#x2F;creativity of the output. Higher values produce more varied results.</td>
+          <td>0.0 to 1.0</td>
+          <td>0.8</td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>guidance</code></td>
+          <td>Controls how closely the model follows your prompt. Higher values adhere more closely.</td>
+          <td>1.0 to 10.0</td>
+          <td>6.0</td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>seed</code></td>
+          <td>Sets a specific random seed for deterministic generation. Same seed + same parameters &#x3D; same result.</td>
+          <td>Any integer</td>
+          <td>Random</td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>length</code></td>
+          <td>Controls the length of the generated track in seconds.</td>
+          <td>30, 60, 120, 180, 240</td>
+          <td>120</td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>key_signature</code></td>
+          <td>Musical key for the composition.</td>
+          <td>C, C#, D, D#, E, F, F#, G, G#, A, A#, B (with major&#x2F;minor)</td>
+          <td>Auto</td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>tempo</code></td>
+          <td>Beats per minute - controls the speed of the track.</td>
+          <td>40 to 200</td>
+          <td>Auto</td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
       </tbody>
     </table>
     
+    <h3>Additional Parameters</h3>
+    <table class="parameters-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+          <th>Values</th>
+          <th>Default</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>time_signature</code></td>
+          <td>Time signature of the track.</td>
+          <td>4&#x2F;4, 3&#x2F;4, 6&#x2F;8, etc.</td>
+          <td>4&#x2F;4</td>
+          <td><span class="badge badge-warning">Experimental</span></td>
+        </tr>
+        <tr>
+          <td><code>style_reference</code></td>
+          <td>A reference song or artist to influence the style and sound of the generation.</td>
+          <td>String with artist name and song title</td>
+          <td>None</td>
+          <td><span class="badge badge-warning">Experimental</span></td>
+        </tr>
+        <tr>
+          <td><code>diversity</code></td>
+          <td>Controls the diversity of the output. Higher values lead to more diverse results.</td>
+          <td>0.0 to 1.0</td>
+          <td>0.5</td>
+          <td><span class="badge badge-warning">Experimental</span></td>
+        </tr>
+        <tr>
+          <td><code>energy</code></td>
+          <td>Controls the energy level of the track. Higher values create more intense, dynamic pieces.</td>
+          <td>0.0 to 1.0</td>
+          <td>0.7</td>
+          <td><span class="badge badge-warning">Experimental</span></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </div>
 
@@ -126,6 +244,54 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><code>[VERSE]</code></td>
+          <td>Marks the verse section of a song, typically containing the main story or narrative.</td>
+          <td><code>[VERSE] Walking through the neon streets, memories flood back...</code></td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>[CHORUS]</code></td>
+          <td>Marks the chorus section, which is the most memorable and repeated part of the song.</td>
+          <td><code>[CHORUS] Never forget where we started, always remember who we are...</code></td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>[INTRO]</code></td>
+          <td>Marks the introduction section of the song, setting the mood and tone.</td>
+          <td><code>[INTRO] (Ambient city sounds with soft piano)</code></td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>[OUTRO]</code></td>
+          <td>Marks the final section of the song, often bringing closure.</td>
+          <td><code>[OUTRO] As the lights dim and the crowd fades away...</code></td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>[BRIDGE]</code></td>
+          <td>Marks a contrasting section that typically appears after the second chorus.</td>
+          <td><code>[BRIDGE] Breaking through the walls I&#39;ve built around my heart...</code></td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>[PRE-CHORUS]</code></td>
+          <td>Marks a section that builds tension before transitioning into the chorus.</td>
+          <td><code>[PRE-CHORUS] The pressure builds with every breath I take...</code></td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>[HOOK]</code></td>
+          <td>Marks a catchy, repeatable section designed to &#39;hook&#39; the listener.</td>
+          <td><code>[HOOK] Live fast, dream big, never look back!</code></td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
+        <tr>
+          <td><code>[INSTRUMENTAL]</code></td>
+          <td>Marks a section without lyrics, showcasing the instrumental elements.</td>
+          <td><code>[INSTRUMENTAL] (Dramatic synth solo with pulsing beat)</code></td>
+          <td><span class="badge badge-primary">Official</span></td>
+        </tr>
       </tbody>
     </table>
     
@@ -140,9 +306,88 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><code>[INSTRUMENTS]</code></td>
+          <td>Specifies instruments to include in the arrangement.</td>
+          <td><code>[INSTRUMENTS] Piano, strings, electronic drums, bass synth</code></td>
+          <td><span class="badge badge-secondary">Community</span></td>
+        </tr>
+        <tr>
+          <td><code>[AVOID]</code></td>
+          <td>Specifies instruments or elements to exclude from the arrangement.</td>
+          <td><code>[AVOID] Distorted guitars, brass instruments</code></td>
+          <td><span class="badge badge-secondary">Community</span></td>
+        </tr>
+        <tr>
+          <td><code>[FEELING]</code></td>
+          <td>Sets the emotional tone of the composition.</td>
+          <td><code>[FEELING] Nostalgic with hopeful undertones</code></td>
+          <td><span class="badge badge-secondary">Community</span></td>
+        </tr>
+        <tr>
+          <td><code>[GENRE]</code></td>
+          <td>Defines the musical style or genre.</td>
+          <td><code>[GENRE] Future bass with orchestral influences</code></td>
+          <td><span class="badge badge-secondary">Community</span></td>
+        </tr>
+        <tr>
+          <td><code>[FORM]</code></td>
+          <td>Defines the overall song structure.</td>
+          <td><code>[FORM] Intro-Verse-Chorus-Verse-Chorus-Bridge-Chorus-Outro</code></td>
+          <td><span class="badge badge-secondary">Community</span></td>
+        </tr>
+        <tr>
+          <td><code>[SUBJECT]</code></td>
+          <td>Sets the lyrical theme or subject matter.</td>
+          <td><code>[SUBJECT] Digital connection in an increasingly isolated world</code></td>
+          <td><span class="badge badge-secondary">Community</span></td>
+        </tr>
       </tbody>
     </table>
     
+    <h3>Instrument Tags</h3>
+    <table class="tags-table">
+      <thead>
+        <tr>
+          <th>Tag</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>[VOICE]</code></td>
+          <td>Specifies vocal style or direction.</td>
+          <td><code>[VOICE] Male, low range, emotional and slightly raspy</code></td>
+          <td><span class="badge badge-warning">Experimental</span></td>
+        </tr>
+        <tr>
+          <td><code>[GUITAR]</code></td>
+          <td>Specifies guitar style or direction.</td>
+          <td><code>[GUITAR] Clean electric with delay and reverb, arpeggiated patterns</code></td>
+          <td><span class="badge badge-warning">Experimental</span></td>
+        </tr>
+        <tr>
+          <td><code>[PERCUSSION]</code></td>
+          <td>Specifies percussion style or direction.</td>
+          <td><code>[PERCUSSION] Minimal electronic kit with glitch elements and deep kick</code></td>
+          <td><span class="badge badge-warning">Experimental</span></td>
+        </tr>
+        <tr>
+          <td><code>[BASS]</code></td>
+          <td>Specifies bass style or direction.</td>
+          <td><code>[BASS] Deep sub bass with occasional mid-range fills</code></td>
+          <td><span class="badge badge-warning">Experimental</span></td>
+        </tr>
+        <tr>
+          <td><code>[KEYBOARDS]</code></td>
+          <td>Specifies keyboard or synth style or direction.</td>
+          <td><code>[KEYBOARDS] Atmospheric pads with subtle modulation and bright leads</code></td>
+          <td><span class="badge badge-warning">Experimental</span></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </div>
 
@@ -160,20 +405,84 @@
     
     <div id="basic-example" class="example-content active">
       <h3>Basic Example</h3>
-      <pre><code></code></pre>
-      <p></p>
+      <pre><code>A chill lo-fi hip hop track with smooth jazzy piano and laid-back beats. Lyrics about late night creative sessions and finding inspiration in the quiet hours.
+
+[VERSE]
+Midnight oil burning bright
+Thoughts flow freely in the night
+Silence speaks the loudest now
+Creativity shows me how
+
+[CHORUS]
+Quiet hours, loud mind
+Leaving all the stress behind
+In this space between the days
+Inspiration finds its ways</code></pre>
+      <p>This basic example uses a simple descriptive prompt followed by structured lyrics with VERSE and CHORUS tags. It provides a straightforward but effective framework for generating a cohesive lo-fi track.</p>
     </div>
     
     <div id="advanced-example" class="example-content">
       <h3>Advanced Example</h3>
-      <pre><code></code></pre>
-      <p></p>
+      <pre><code>temperature&#x3D;0.7 guidance&#x3D;6.5 key_signature&#x3D;G minor tempo&#x3D;85
+
+A downtempo electronic track with ambient textures and jazz influences. Deep, resonant bass with glitchy percussion and atmospheric synth pads. Contemplative female vocals with lyrics about urban solitude and finding beauty in everyday moments.
+
+[VERSE 1]
+City lights reflect in puddles on the street
+Strangers passing by but no one stops to meet
+Headphones in, I create my bubble here
+Sounds transform my world and make it disappear
+
+[PRE-CHORUS]
+In between the chaos and the quiet
+In between the darkness and the light
+
+[CHORUS]
+Beauty hides in ordinary places
+Moments caught between the empty spaces
+Slowing down to see what others miss
+Finding peace within the city&#39;s hiss</code></pre>
+      <p>This advanced example uses specific technical parameters at the top, followed by a more detailed style description that references specific sound elements. It includes PRE-CHORUS tags and more nuanced lyrical themes with urban imagery.</p>
     </div>
     
     <div id="complex-example" class="example-content">
       <h3>Complex Example</h3>
-      <pre><code></code></pre>
-      <p></p>
+      <pre><code>temperature&#x3D;0.8 guidance&#x3D;7.0 key_signature&#x3D;D major tempo&#x3D;110 length&#x3D;180
+
+[GENRE] Cinematic electronic with orchestral elements and post-rock influences
+[FEELING] Triumphant, uplifting, with underlying tension that resolves
+[FORM] Intro-Verse-Pre-Chorus-Chorus-Verse-Chorus-Bridge-Chorus-Outro
+[INSTRUMENTS] Orchestra strings, piano, electronic drums, analog synths, electric bass, ambient pads
+[SUBJECT] Overcoming insurmountable obstacles and finding inner strength through adversity
+
+[INTRO]
+(Soft piano with ambient textures, gradually adding strings)
+
+[VERSE 1]
+Faced with mountains seemingly too high to climb
+Shackled by doubts that have haunted me for time
+Whispers of failure echo in my mind
+Telling me to leave my ambitions behind
+
+[PRE-CHORUS]
+But deep within this heart of mine
+An ember glows, refusing to decline
+
+[CHORUS]
+Rising from the ashes of my fear
+Finding strength I never knew was here
+Breaking through the walls I&#39;ve built so high
+Spread my wings, now watch me touch the sky
+
+[BRIDGE]
+The journey&#39;s never straight or clear
+The path ahead may disappear
+But every step I choose to take
+Builds the future I want to make
+
+[OUTRO]
+(Gradual build to cinematic climax with full orchestration, then gentle fade to solo piano)</code></pre>
+      <p>This complex example uses precise parameters, multiple meta-tags for different aspects of the composition, and a complete song structure with detailed instrumental direction. It demonstrates how to create a comprehensive prompt for maximum control over both musical and lyrical elements.</p>
     </div>
   </section>
 </div>
@@ -185,6 +494,34 @@
     <p></p>
     
     <div class="cards-container">
+      <div class="card">
+        <h3>Start With Clear Sonic References</h3>
+        <p>Include specific reference points for the sound you want, such as artists, songs, or production styles rather than just genre names.</p>
+        <div class="card-tip">
+          <strong>Tip:</strong> Instead of &#39;make an electronic track&#39;, try &#39;Create an electronic track with warm analog synths like Tycho, tight drums like Bonobo, and atmospheric textures similar to Jon Hopkins.&#39;
+        </div>
+      </div>
+      <div class="card">
+        <h3>Use Proper Section Capitalization</h3>
+        <p>Udio&#39;s section tags use ALL CAPS format ([VERSE], [CHORUS]) for optimal recognition. This helps the model properly structure your song.</p>
+        <div class="card-tip">
+          <strong>Tip:</strong> Always capitalize section tags completely: [VERSE] not [Verse], [CHORUS] not [Chorus], etc.
+        </div>
+      </div>
+      <div class="card">
+        <h3>Optimize Parameter Combinations</h3>
+        <p>The relationship between temperature and guidance significantly affects your results. Higher temperature with lower guidance creates more unexpected variations.</p>
+        <div class="card-tip">
+          <strong>Tip:</strong> For highly creative but less predictable results, try temperature&#x3D;0.9 with guidance&#x3D;4.0. For more faithful adherence to your prompt, use temperature&#x3D;0.6 with guidance&#x3D;7.0.
+        </div>
+      </div>
+      <div class="card">
+        <h3>Create Contrast Between Sections</h3>
+        <p>Design your lyrics with distinct emotional tones or narrative perspectives between verses, choruses, and bridges to create musical contrast.</p>
+        <div class="card-tip">
+          <strong>Tip:</strong> Try using more detailed, specific imagery in verses and more universal, emotional concepts in choruses to match how music typically flows.
+        </div>
+      </div>
     </div>
     
     <h3>Do's and Don'ts</h3>
@@ -192,11 +529,25 @@
       <div class="do-section">
         <h4>Do</h4>
         <ul>
+          <li>Use specific instrumental and production references</li>
+          <li>Balance technical description with emotional language</li>
+          <li>Keep lyrical sections reasonably sized (4-8 lines)</li>
+          <li>Maintain consistent themes throughout your lyrics</li>
+          <li>Use ALL CAPS for section tags</li>
+          <li>Include tempo and key information when you have specific preferences</li>
+          <li>Define both musical and emotional qualities in your prompt</li>
         </ul>
       </div>
       <div class="dont-section">
         <h4>Don't</h4>
         <ul>
+          <li>Don&#39;t mix too many conflicting genre references</li>
+          <li>Avoid extremely detailed vocal requirements that are unrealistic</li>
+          <li>Don&#39;t write overly long sections (more than 8-10 lines)</li>
+          <li>Avoid leaving section tags incomplete or improperly formatted</li>
+          <li>Don&#39;t use extremely high guidance values (&gt;9.0) which can cause stiff results</li>
+          <li>Avoid focusing only on lyrics without any musical direction</li>
+          <li>Don&#39;t request specific artists&#39; exact voices by name</li>
         </ul>
       </div>
     </div>
@@ -225,9 +576,12 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-copyright">
-        &copy; 2025 
+        &copy; 2025 Udio AI Community Resources
       </div>
       <div class="footer-links">
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;a-Gb&#x2F;udio-cheatsheet">GitHub Repository</a>
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;a-Gb&#x2F;udio-cheatsheet&#x2F;issues">Report Issue</a>
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;a-Gb&#x2F;udio-cheatsheet#contributing">Contribute</a>
       </div>
     </div>
   </footer>

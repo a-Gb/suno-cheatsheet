@@ -73,23 +73,62 @@ function loadContentData(platform) {
   const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
   
   // Load other data files if they exist
-  let data = { ...config };
+  let data = {
+    // Initialize arrays
+    nav_items: config.navigation?.nav_items || [],
+    sidebar_sections: config.navigation?.sidebar_sections || [],
+    footer_links: config.navigation?.footer_links || [],
+    // Set defaults
+    title: `${config.platform.name} Ultimate Parameter & Meta-Tag Cheatsheet (v${config.platform.version})`,
+    // Pull data from config
+    description: config.platform.description,
+    keywords: config.platform.keywords,
+    author: config.platform.author,
+    platform_name: config.platform.name,
+    logo_url: config.platform.logo_url,
+    copyright: config.platform.copyright,
+    // Pull from meta section
+    og_title: config.meta.og_title,
+    og_description: config.meta.og_description,
+    og_image: config.meta.og_image,
+    og_url: config.meta.og_url,
+    canonical_url: config.meta.canonical_url,
+    // Set structured data
+    structured_data: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": config.meta.og_title,
+      "description": config.meta.og_description,
+      "author": { "@type": "Person", "name": config.platform.author },
+      "publisher": { "@type": "Organization", "name": config.platform.copyright }
+    }, null, 2),
+    // Spread the rest of config for access to other properties
+    ...config,
+  };
   
   try {
     if (fs.existsSync(parametersPath)) {
       data.parameters = JSON.parse(fs.readFileSync(parametersPath, 'utf8'));
+      // Also spread parameters to root level for template access
+      Object.assign(data, data.parameters);
     }
     
     if (fs.existsSync(tagsPath)) {
       data.tags = JSON.parse(fs.readFileSync(tagsPath, 'utf8'));
+      // Also spread tags to root level for template access
+      Object.assign(data, data.tags);
     }
     
     if (fs.existsSync(examplesPath)) {
       data.examples = JSON.parse(fs.readFileSync(examplesPath, 'utf8'));
+      // Also spread examples to root level for template access
+      Object.assign(data, data.examples);
     }
     
     if (fs.existsSync(bestPracticesPath)) {
       data.bestPractices = JSON.parse(fs.readFileSync(bestPracticesPath, 'utf8'));
+      // Also spread best practices to root level for template access
+      Object.assign(data, data.bestPractices);
     }
   } catch (error) {
     console.error(`Error loading data for ${platform}:`, error);
@@ -97,6 +136,9 @@ function loadContentData(platform) {
   
   // Add current year for copyright
   data.current_year = new Date().getFullYear();
+  
+  // Debug output
+  console.log(`Platform: ${data.platform_name}, Title: ${data.title}`);
   
   console.log(`✅ Content data loaded for ${platform}`);
   return data;
