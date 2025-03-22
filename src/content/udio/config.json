@@ -1,7 +1,7 @@
 {
   "platform": {
     "name": "Udio AI",
-    "logo_url": "/assets/images/udio-logo.png", 
+    "logo_url": "./assets/images/udio-logo.png", 
     "version": "1.0",
     "description": "Complete reference guide for Udio AI music generation parameters, meta-tags, style directives, and best practices.",
     "keywords": "Udio AI, music generation, AI music, prompting, parameters, meta-tags, udio cheatsheet, udio reference, udio tags, udio parameters, how to use udio, udio meta tags, udio prompt guide, udio reference sheet",
@@ -20,12 +20,12 @@
     "nav_items": [
       {
         "label": "Cheatsheet",
-        "url": "/",
+        "url": "./",
         "active": true
       },
       {
         "label": "Benchmarks",
-        "url": "/benchmark-examples.html",
+        "url": "./benchmark-examples.html",
         "active": false
       },
       {

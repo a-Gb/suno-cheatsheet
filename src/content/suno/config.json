@@ -1,7 +1,7 @@
 {
   "platform": {
     "name": "Suno AI",
-    "logo_url": "/assets/images/suno-logo.png", 
+    "logo_url": "./assets/images/suno-logo.png", 
     "version": "2.1",
     "description": "Complete reference guide for Suno AI music generation parameters, meta-tags, style directives, and best practices.",
     "keywords": "Suno AI, music generation, AI music, prompting, parameters, meta-tags, suno cheatsheet, suno reference, suno tags, suno parameters, how to use suno, suno meta tags, suno prompt guide, suno reference sheet",
@@ -20,12 +20,12 @@
     "nav_items": [
       {
         "label": "Cheatsheet",
-        "url": "/",
+        "url": "./",
         "active": true
       },
       {
         "label": "Benchmarks",
-        "url": "/benchmark-examples.html",
+        "url": "./benchmark-examples.html",
         "active": false
       },
       {
