@@ -17,11 +17,9 @@
   ],
   "author": "AI Music Community",
   "license": "MIT",
-  "dependencies": {
-    "mustache": "^4.2.0"
-  },
   "devDependencies": {
     "gh-pages": "^6.1.1",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "mustache": "^4.2.0"
   }
 }
