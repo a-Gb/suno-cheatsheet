@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Maximize indexing and visibility
+Disallow: 
+
+Sitemap: https://a-gb.github.io/suno-cheatsheet/sitemap.xml

@@ -4,11 +4,11 @@
   "description": "Template system for AI music generation reference guides",
   "main": "index.js",
   "scripts": {
-    "build": "node src/templates/build.js && node src/templates/build-showcase.js",
+    "build": "node src/templates/build.js && node src/templates/build-showcase.js && mkdir -p docs && cp -r public/* docs/ && touch docs/.nojekyll",
     "build:cheatsheets": "node src/templates/build.js",
     "build:showcase": "node src/templates/build-showcase.js",
     "dev": "npm run build && http-server public",
-    "deploy": "npm run build && gh-pages -d public"
+    "deploy": "npm run build && gh-pages -d docs"
   },
   "keywords": [
     "ai",

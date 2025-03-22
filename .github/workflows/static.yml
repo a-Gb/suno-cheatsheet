@@ -45,11 +45,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
+      - name: Copy to docs directory
+        run: |
+          cp -r public/* docs/
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload only the public directory
-          path: './public'
+          # Upload the docs directory
+          path: './docs'
       
       - name: Deploy to GitHub Pages
         id: deployment
