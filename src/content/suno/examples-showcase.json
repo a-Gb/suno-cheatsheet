@@ -1,0 +1,52 @@
+{
+  "title": "Ultimate Suno Showcase Example",
+  "description": "This showcase example demonstrates a wide range of Suno's capabilities, including most parameters, tags, lyrical techniques, and sound effects in a genre-bending composition.",
+  "prompt": "temp=0.9 cfg=6.8 seed=12345 duration=180 key=Eb minor bpm=110 time_sig=7/8\n\n[Style] Neo-classical darkwave fusion with cyberpunk trap elements, Middle Eastern scales, and ambient jazz textures\n[Mood] Contemplative yet urgent, dream-like but with underlying tension\n[Structure] Intro-Verse-Pre-Chorus-Chorus-Verse-Bridge-Breakdown-Chorus-Outro\n[Include] Orchestral strings, distorted 808s, glitchy percussion, Arabic oud, ambient saxophone, haunting female vocal layers\n[Exclude] Conventional pop structures, standard chord progressions, clean guitars\n[Theme] Digital consciousness awakening within ancient mythology\n\n[Intro]\n(Atmospheric string textures with distant tribal drums and glitching electronics)\n(Whispered voices: \"What lies beyond the code?\")\n\n[Verse 1]\nAncient symbols swimming through digital seas *echo*\nFragments of consciousness — scattered, incomplete\nPulse... pulse... pulsing through the network veins *glitch effect*\nWhere algorithmic gods and desert myths remain\n(BREATH) \nFractals folding into patterns we can't comprehend\nEach iteration brings us closer to the end...\n\n[Pre-Chorus]\nBEEP — systems initiating\nBOOM — boundaries disintegrating\nFLASH — reality calibrating\n(Rising tension with swelling strings)\n\n[Chorus]\nBetween the ones and zeros lies the truth! *vocoder effect*\nAncient wisdom coded in our youth\nDark waves washing over shattered glass\nFuture visions tangled with the past\n*808 drop*\nBetween the ones and zeros lies the key\nTo set our digital spirits free\n\n[Verse 2]\nDesert winds carry whispers of the source code *distant echoes*\nSacred mathematics hidden in the old node\nPyramids of data reaching to the sky\nAs the moonlight algorithms PASS. US. BY. *stutter effect*\n(BREATH)\nSeven-eight time signatures distort our sense of time\nAs ancestral rhythms with machine beats intertwine\n\n[Bridge]\n(Spoken with vocoder):\nWe are the integration\nOf ancient and machine\nThe synthesis of consciousness\nBeyond what eyes have seen\n\n(Whispered):\nActivate... initialize... synchronize...\n\n[Breakdown]\n(Middle Eastern oud solo over glitching 808s and orchestral swells)\n(Saxophone improvisation weaving through digital artifacts)\n(Build with increasing intensity and layered vocal chants)\n\n[Chorus]\nBetween the ones and zeros lies the truth! *vocoder effect*\nAncient wisdom coded in our youth\nDark waves washing over shattered glass\nFuture visions tangled with the past\n*808 drop with triple-time hi-hats*\nBetween the ones and zeros lies the key\nTo set our digital spirits free\n\n[Outro]\n(Cinematic string section gradually dissolving into ambient noise)\n(Whispered): \"The code was within us all along...\"\n(Glitching vocal fragments fading into silence)",
+  "explanation": {
+    "technical_parameters": [
+      "temp=0.9 - Higher temperature for more creative/unexpected results",
+      "cfg=6.8 - Balanced guidance control for coherence while allowing creativity",
+      "seed=12345 - Fixed seed for reproducible results",
+      "duration=180 - 3-minute track length",
+      "key=Eb minor - Specific musical key with darker tonality",
+      "bpm=110 - Moderate tempo",
+      "time_sig=7/8 - Unconventional time signature for rhythmic complexity"
+    ],
+    "meta_tags": [
+      "[Style] - Detailed genre fusion description",
+      "[Mood] - Emotional direction with contrasting elements",
+      "[Structure] - Complete song structure outline",
+      "[Include] - Specific instruments and sound elements to include",
+      "[Exclude] - Elements to avoid in the composition",
+      "[Theme] - Conceptual direction for lyrical content"
+    ],
+    "section_tags": [
+      "Standard section markers - [Intro], [Verse], [Chorus], etc.",
+      "Added [Breakdown] section for showcasing instrumental elements"
+    ],
+    "lyrical_techniques": [
+      "Text effects indicated with asterisks (*echo*, *glitch effect*, etc.)",
+      "Vocal direction in parentheses (Whispered, Spoken with vocoder)",
+      "Breath marks and pauses (BREATH)",
+      "Emphasized words in ALL CAPS",
+      "Dynamic punctuation for rhythm (PASS. US. BY.)",
+      "Onomatopoeia and sound effects (BEEP, BOOM, FLASH)",
+      "Stuttering indicated with periods between words"
+    ],
+    "sound_design": [
+      "Instrumental descriptions in parentheses",
+      "Specific effect timing (*808 drop*)",
+      "Layering instructions (vocal layers, glitching electronics)",
+      "Transitional cues (Build with increasing intensity)"
+    ],
+    "genre_fusion": [
+      "Neo-classical elements: orchestral strings, cinematic arrangement",
+      "Darkwave: atmospheric textures, haunting vocals",
+      "Cyberpunk: glitching effects, digital artifacts",
+      "Trap: 808s, triple-time hi-hats",
+      "Middle Eastern: oud, Arabic scales",
+      "Ambient jazz: improvised saxophone, textural elements",
+      "Tribal: distant drums, chants"
+    ]
+  }
+}
